@@ -1,0 +1,73 @@
+// CTA
+.btnContainer {
+  display: inline-flex;
+  // width: 100%;
+  padding: 0 15px;
+
+  @include md {
+    justify-content: flex-end;
+    margin-bottom: 16px;
+  }
+
+  @include xs {
+    justify-content: flex-end;
+    margin-bottom: 32px;
+  }
+
+  svg {
+    margin-left: 8px;
+  }
+}
+
+.cta {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease, transform 0.2s ease;
+  margin-top: 3px;
+
+  span {
+    z-index: 1;
+  }
+
+  &:hover {
+    transform: translateX(3px);
+    opacity: 0.6;
+  }
+
+  &.cta01 {
+    color: white;
+
+    &.m-01 {
+      color: $m-01;
+    }
+  }
+
+  &.cta02 {
+    cursor: pointer;
+    background-color: $m-01;
+    color: white;
+    padding: 0 32px;
+    height: 40px;
+    border: none;
+    border-radius: 2px;
+    text-align: center;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: $m-01--light-02;
+      transform: none;
+    }
+  }
+}
+
+.error {
+  padding: 0 15px;
+  color: #db3737;
+}

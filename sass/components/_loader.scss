@@ -1,0 +1,238 @@
+// Loader
+.loader {
+  width: 100vw;
+  height: calc(100vh - 64px);
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  // z-index: 4;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__item {
+    width: 140px;
+    height: 12px;
+    display: flex;
+    background-color: white;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0px 0px 0px 2px $m-01,
+      0 3px 9px -2px rgba(0, 48, 135, 0.4);
+    z-index: 1;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $m-01;
+      border-radius: inherit;
+      animation: loading 3s cubic-bezier(0.57, 0.48, 0.21, 1.23) infinite;
+
+      @keyframes loading {
+        0% {
+          width: 16px;
+          left: 0;
+        }
+
+        25% {
+          width: 100%;
+          left: 0;
+        }
+
+        50% {
+          width: 16px;
+          left: calc(100% - 16px);
+        }
+
+        75% {
+          width: 100%;
+          left: 0;
+        }
+
+        100% {
+          width: 16px;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  &__text {
+    margin-top: 24px;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0.2px;
+    color: $neu-11;
+    animation: text 3s cubic-bezier(0.57, 0.48, 0.21, 1.23) infinite;
+
+    @keyframes text {
+      0% {
+        opacity: 0.1;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0.1;
+      }
+    }
+  }
+}
+
+// Here is where the magic happens
+
+$offset: 187;
+$duration: 1.4s;
+
+.spinner {
+  animation: rotator $duration linear infinite;
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+.path {
+  stroke-dasharray: $offset;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash $duration ease-in-out infinite,
+    colors ($duration * 4) ease-in-out infinite;
+}
+
+.dark .path {
+  stroke-dasharray: $offset;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash $duration ease-in-out infinite,
+    colorsDark ($duration * 4) ease-in-out infinite;
+}
+
+@keyframes colorsDark {
+  0% {
+    stroke: #3B82F6;
+  }
+  25% {
+    stroke: #3B82F6;
+  }
+  50% {
+    stroke: #3B82F6;
+  }
+  75% {
+    stroke: #3B82F6;
+  }
+  100% {
+    stroke: #3B82F6;
+  }
+}
+
+@keyframes colors {
+  0% {
+    stroke: $m-01;
+  }
+  25% {
+    stroke: $m-01;
+  }
+  50% {
+    stroke: $m-01;
+  }
+  75% {
+    stroke: $m-01;
+  }
+  100% {
+    stroke: $m-01;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: $offset;
+  }
+  50% {
+    stroke-dashoffset: calc($offset / 4);
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: $offset;
+    transform: rotate(450deg);
+  }
+}
+
+.spinnerWrapper {
+  transform: translateY(1px);
+  // Here is where the magic happens
+
+  $offset: 187;
+  $duration: 1.4s;
+
+  .spinner {
+    animation: rotator $duration linear infinite;
+  }
+
+  @keyframes rotator {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(270deg);
+    }
+  }
+
+  .path {
+    stroke-dasharray: $offset;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    animation: dash $duration ease-in-out infinite,
+      colorsSpinner ($duration * 4) ease-in-out infinite;
+  }
+
+  @keyframes colorsSpinner {
+    0% {
+      stroke: #fff;
+    }
+    25% {
+      stroke: #fff;
+    }
+    50% {
+      stroke: #fff;
+    }
+    75% {
+      stroke: #fff;
+    }
+    100% {
+      stroke: #fff;
+    }
+  }
+
+  @keyframes dash {
+    0% {
+      stroke-dashoffset: $offset;
+    }
+    50% {
+      stroke-dashoffset: calc($offset / 4);
+      transform: rotate(135deg);
+    }
+    100% {
+      stroke-dashoffset: $offset;
+      transform: rotate(450deg);
+    }
+  }
+}

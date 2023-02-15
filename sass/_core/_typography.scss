@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap");
+
+//Fonts
+$font: "Mulish", sans-serif;
+
+$textMaxWidth: 720px;
+
+@mixin font-giant {
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 88px;
+
+  @include sm {
+    font-size: 60px;
+    line-height: 68px;
+  }
+}
+
+@mixin font-xxl {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 64px;
+
+  @include sm {
+    font-size: 32px;
+    line-height: 42px;
+  }
+}
+
+@mixin font-xl {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 40px;
+
+  @include md {
+    font-size: 28px;
+    line-height: 32px;
+  }
+}
+
+@mixin font-l {
+  font-size: 34px;
+  line-height: 42px;
+  font-weight: 700;
+
+  @include md {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+@mixin font-m {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+@mixin font-s {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+
+  @include sm {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
+@mixin font-xs {
+  font-size: 16px;
+  line-height: 26px;
+}
+
+@mixin font-xxs {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+}

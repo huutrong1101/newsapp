@@ -1,0 +1,35 @@
+// Main Colours
+// $m-01: #0f2f7f;
+$m-01: #1e3a8a;
+$m-01--light-01: #194dac;
+$m-01--light-02: #2d65cc;
+$m-01--light-03: #6294f0;
+$m-01--dark-01: #002279;
+$m-02: #78be20;
+$m-02--light-01: #9ad67a;
+$m-02--light-02: #c0eba8;
+$m-02--light-03: #daf6cb;
+$m-02--dark-01: #03772c;
+$m-02--dark-02: #449e21;
+
+// Neutral Colours
+$neu-01: #ffffff;
+$neu-02: #eef0f5;
+$neu-03: #e2e4ea;
+$neu-04: #efe9e7;
+$neu-05: #dbd6d4;
+$neu-06: #858a9a;
+$neu-07: #989296;
+$neu-08: #757076;
+$neu-09: #666a76;
+$neu-10: #4c4a55;
+$neu-11: #3c404d;
+$neu-12: #021533;
+
+$g-01: linear-gradient(90deg, $m-01, $m-01--light-02);
+$g-02: linear-gradient(90deg, $m-02--dark-01, $m-02);
+
+// Style Variables
+$shadow: 0 4px 10px -6px rgba(0, 48, 135, 0.4);
+$shadowHover: none;
+$radius: 4px;

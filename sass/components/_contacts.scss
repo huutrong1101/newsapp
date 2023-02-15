@@ -1,0 +1,39 @@
+.contacts {
+  @include spacingM;
+
+  &__wrapper {
+    @include wrapper;
+  }
+
+  &__heading {
+    @include xs {
+      padding: 0 15px;
+    }
+  }
+
+  &__title {
+    @include font-xl;
+    font-weight: 700;
+    padding-bottom: 24px;
+    color: $m-01;
+
+    @include md {
+      padding-bottom: 16px;
+    }
+  }
+
+  &__description {
+    @include font-s;
+    margin-bottom: 16px;
+
+    @include xs {
+      @include font-xs;
+    }
+  }
+
+  &__image {
+    box-shadow: 0px 1px 2px 0px rgba(209, 8, 8, 0.3);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,47 @@
+.wot {
+  @include spacingXL;
+  @include paddingSide;
+
+  @include xs {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  &__wrapper {
+    max-width: $textMaxWidth;
+    margin: 0 auto;
+  }
+
+  &__title {
+    @include font-l;
+    color: $m-01;
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    color: $m-01--light-02;
+    @include font-m;
+    font-weight: 400;
+    margin: 20px 0;
+
+    @include sm {
+      margin: 12px 0;
+    }
+  }
+
+  &__text,
+  p {
+    @include font-xs;
+
+    a {
+      transition: all 0.2s ease;
+      color: $m-01--light-02;
+      text-decoration: underline;
+
+      &:hover {
+        color: $m-01--light-03;
+        text-decoration: none;
+      }
+    }
+  }
+}

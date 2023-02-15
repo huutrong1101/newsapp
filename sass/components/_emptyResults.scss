@@ -1,0 +1,28 @@
+.emptyResults {
+  padding: 0 15px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  min-height: calc(100vh - 106px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__wrapper {
+    @include wrapper;
+  }
+
+  &__message {
+    color: $neu-12;
+    text-align: center;
+    @include font-xs;
+    line-height: 22px;
+    font-weight: 800;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  &__icon {
+    width: 172px;
+    margin: 0 auto;
+  }
+}

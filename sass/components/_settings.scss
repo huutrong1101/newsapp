@@ -1,0 +1,230 @@
+.settings {
+  $this: &;
+  @include spacingM;
+  padding-top: 32px;
+
+  @include md {
+    padding-top: 16px;
+  }
+
+  &__heading {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include md {
+      flex: 0 0 83.3333333333%;
+      max-width: 83.3333333333%;
+      margin: 0 auto;
+      margin-bottom: 16px;
+    }
+
+    @include sm {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin: 0 auto;
+      margin-bottom: 16px;
+    }
+
+    @include xs {
+      padding: 0 15px;
+    }
+  }
+
+  &__mainTitle {
+    @include font-xl;
+    font-weight: 700;
+    color: $neu-12;
+    padding: 24px 0;
+
+    @include md {
+      // display: none;
+    }
+  }
+
+  &__btnDelete {
+    cursor: pointer;
+    background-color: #b73737;
+    color: white;
+    padding: 0 10px;
+    height: 40px;
+    border: none;
+    border-radius: 2px;
+    text-align: center;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  &__left {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+    height: 100%;
+    padding: 0 15px;
+
+    @include md {
+      flex: 0 0 83.3333333333%;
+      max-width: 83.3333333333%;
+      margin: 0 auto;
+    }
+
+    @include sm {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  &__right {
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+
+    @include md {
+      flex: 0 0 83.3333333333%;
+      max-width: 83.3333333333%;
+      margin: 0 auto;
+    }
+
+    @include sm {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+
+    p {
+      padding-bottom: 16px;
+    }
+  }
+
+  &__profile {
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s 0s ease;
+  }
+
+  &__profilePic {
+    width: 160px;
+    height: 160px;
+    border-radius: 100%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border: 5px solid white;
+    box-shadow: 0px 0px 0px 1px rgba($m-02, 0.5);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 100%;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      transition: all 0.2s ease;
+      opacity: 0;
+
+      path {
+        fill: white;
+      }
+    }
+
+    &:hover {
+      svg {
+        opacity: 1;
+        z-index: 2;
+      }
+
+      &:after {
+        background: linear-gradient(90deg, #2d65cc10, #2d65cc10),
+          rgba(60, 64, 77, 0.6);
+      }
+    }
+  }
+
+  input {
+    color: $neu-12;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid lightgray;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: $m-01;
+    padding: 0 24px;
+    margin-bottom: 24px;
+    height: 32px;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.2s ease;
+    width: 100%;
+    box-shadow: $shadow;
+
+    &:hover {
+      background-color: $m-01--light-01;
+      box-shadow: $shadowHover;
+    }
+
+    &.disabled {
+
+      &:hover {
+        background-color: $m-01;
+        cursor: default;
+      }
+    }
+  }
+}
